@@ -24,7 +24,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = ['CLIENT_URL'];
+const allowedOrigins = ['https://chatpulse.netlify.app'];
 app.use(cors({
   origin: function (origin, callback) {
     // Check if the requesting origin is in the allowedOrigins array or if it's undefined (for same-origin requests)
