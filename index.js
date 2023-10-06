@@ -9,6 +9,7 @@ const User = require('./models/User');
 const Message = require('./models/Message');
 const ws = require('ws');
 const fs = require('fs');
+const PORT=process.env.PORT||4040
 
 dotenv.config();
 mongoose.connect(process.env.MONGO_URL, (err) => {
@@ -177,8 +178,8 @@ app.post('/register', async (req,res) => {
 
 
 
-const server = app.listen(4040,()=>{
-  console.log("server running on port" +4040)
+const server = app.listen(PORT,()=>{
+  console.log("server running on port" +PORT)
 });
 const activeConnections = new Set();
 const wss = new ws.WebSocketServer({server});
